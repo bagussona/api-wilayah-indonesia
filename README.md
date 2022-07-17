@@ -33,7 +33,7 @@ Contoh Response:
 GET https://bagussona.github.io/api-wilayah-indonesia/api/regencies/{provinceId}.json
 ```
 
-Contoh untuk mengambil daftar kab/kota di provinsi Garut (ID = 32):
+Contoh untuk mengambil daftar kab/kota di provinsi Jawa Barat (ID = 32):
 
 ```
 GET https://bagussona.github.io/api-wilayah-indonesia/api/regencies/32.json
@@ -63,7 +63,7 @@ Contoh Response:
 GET https://bagussona.github.io/api-wilayah-indonesia/api/districts/{regencyId}.json
 ```
 
-Contoh untuk mengambil daftar kecamatan di Garut Kota (ID = 3205):
+Contoh untuk mengambil daftar kecamatan di Kabupaten Garut (ID = 3205):
 
 ```
 GET https://bagussona.github.io/api-wilayah-indonesia/api/districts/3205.json
@@ -93,7 +93,7 @@ Contoh Response:
 GET https://bagussona.github.io/api-wilayah-indonesia/api/villages/{districtId}.json
 ```
 
-Contoh untuk mengambil daftar kelurahan di Garut Kota (ID = 3205190):
+Contoh untuk mengambil daftar kelurahan di Kecamatan Garut Kota (ID = 3205190):
 
 ```
 GET https://bagussona.github.io/api-wilayah-indonesia/api/villages/3205190.json
@@ -144,7 +144,7 @@ Contoh Response:
 GET https://bagussona.github.io/api-wilayah-indonesia/api/regency/{regencyId}.json
 ```
 
-Contoh untuk mengambil data kabupaten Garut (ID = 3205):
+Contoh untuk mengambil data Kabupaten Garut (ID = 3205):
 
 ```
 GET https://bagussona.github.io/api-wilayah-indonesia/api/regency/3205.json
@@ -166,7 +166,7 @@ Contoh Response:
 GET https://bagussona.github.io/api-wilayah-indonesia/api/district/{districtId}.json
 ```
 
-Contoh untuk mengambil data kecamatan Garut Kota (ID = 3205190):
+Contoh untuk mengambil data Kecamatan Garut Kota (ID = 3205190):
 
 ```
 GET https://bagussona.github.io/api-wilayah-indonesia/api/district/3205190.json
@@ -188,7 +188,7 @@ Contoh Response:
 GET https://bagussona.github.io/api-wilayah-indonesia/api/village/{villageId}.json
 ```
 
-Contoh untuk mengambil data kelurahan Kota Kulon (ID = 3205190005):
+Contoh untuk mengambil data Kelurahan Kota Kulon (ID = 3205190005):
 
 ```
 GET https://bagussona.github.io/api-wilayah-indonesia/api/village/3205190005.json
