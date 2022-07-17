@@ -1,4 +1,4 @@
-API Data Wilayah Indonesia - Forked from [emsifa[(https://github.com/emsifa/api-wilayah-indonesia)
+API Data Wilayah Indonesia - Forked from [emsifa](https://github.com/emsifa/api-wilayah-indonesia)
 ==========================
 
 Demo: [https://bagussona.github.io/api-wilayah-indonesia/](https://bagussona.github.io/api-wilayah-indonesia/)
