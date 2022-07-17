@@ -1,43 +1,14 @@
-API Data Wilayah Indonesia
+API Data Wilayah Indonesia - Forked from [emsifa[(https://github.com/emsifa/api-wilayah-indonesia)
 ==========================
 
-Repository ini berisi source code untuk generate (REST) API statis berisi data wilayah Indonesia
-serta perintah untuk mendeploynya ke _static hosting_ [Github Page](https://pages.github.com/).
-
-Demo: [https://emsifa.github.io/api-wilayah-indonesia](https://emsifa.github.io/api-wilayah-indonesia)
-
-#### Apa yang dimaksud API statis? 
-
-API statis adalah API yang _endpoint_-nya terdiri dari file statis.
-
-#### Keuntungan API statis?
-
-* Dapat dihosting pada _static file hosting_ seperti Github Page, Netlify, dsb.
-* Proses lebih cepat karena tidak membutuhkan server-side scripting.
-
-#### Bagaimana cara kerjanya?
-
-* Daftar provinsi, kab/kota, kecamatan, kelurahan/desa disimpan pada folder `data` berupa file `csv` (agar mudah diedit).
-* Kemudian script `generate.php` dijalankan. Script ini akan membaca file `csv` didalam folder `data`, kemudian men-generate ribuan endpoint (file) kedalam folder `static/api`.
-* API siap 'dihidangkan'.
-
-#### Saya mau hosting di Github saya sendiri, bagaimana caranya?
-
-* Fork repository ini. 
-* Buka cmd/terminal.
-* `git clone https://github.com/usernamekamu/api-wilayah-indonesia.git`.
-* `echo "" > hello.txt`.
-* `git add hello.txt`.
-* `git push origin master`.
-* Tunggu beberapa saat sampai _Github_ build _Github Page_ kamu.
-* Buka URL `https://usernamekamu.github.io/api-wilayah-indonesia`.
+Demo: [https://bagussona.github.io/api-wilayah-indonesia/](https://bagussona.github.io/api-wilayah-indonesia/)
 
 ## ENDPOINTS
 
 #### 1. Mengambil Daftar Provinsi
 
 ```
-GET https://emsifa.github.io/api-wilayah-indonesia/api/provinces.json
+GET https://bagussona.github.io/api-wilayah-indonesia/api/provinces.json
 ```
 
 Contoh Response:
@@ -45,13 +16,13 @@ Contoh Response:
 ```
 [
   {
-    "id": "11",
-    "name": "ACEH"
+    "id": "32",
+    "name": "JAWA BARAT"
   },
   {
-    "id": "12",
-    "name": "SUMATERA UTARA"
-  },
+    "id": "33",
+    "name": "JAWA TENGAH"
+  }
   ...
 ]
 ```
@@ -59,13 +30,13 @@ Contoh Response:
 #### 2. Mengambil Daftar Kab/Kota pada Provinsi Tertentu
 
 ```
-GET https://emsifa.github.io/api-wilayah-indonesia/api/regencies/{provinceId}.json
+GET https://bagussona.github.io/api-wilayah-indonesia/api/regencies/{provinceId}.json
 ```
 
-Contoh untuk mengambil daftar kab/kota di provinsi Aceh (ID = 11):
+Contoh untuk mengambil daftar kab/kota di provinsi Garut (ID = 32):
 
 ```
-GET https://emsifa.github.io/api-wilayah-indonesia/api/regencies/11.json
+GET https://bagussona.github.io/api-wilayah-indonesia/api/regencies/32.json
 ```
 
 Contoh Response:
@@ -73,14 +44,14 @@ Contoh Response:
 ```
 [
   {
-    "id": "1101",
-    "province_id": "11",
-    "name": "KABUPATEN SIMEULUE"
+    "id": "3204",
+    "province_id": "32",
+    "name": "KABUPATEN BANDUNG"
   },
   {
-    "id": "1102",
-    "province_id": "11",
-    "name": "KABUPATEN ACEH SINGKIL"
+    "id": "3205",
+    "province_id": "32",
+    "name": "KABUPATEN GARUT"
   },
   ...
 ]
@@ -89,13 +60,13 @@ Contoh Response:
 #### 3. Mengambil Daftar Kecamatan pada Kab/Kota Tertentu
 
 ```
-GET https://emsifa.github.io/api-wilayah-indonesia/api/districts/{regencyId}.json
+GET https://bagussona.github.io/api-wilayah-indonesia/api/districts/{regencyId}.json
 ```
 
-Contoh untuk mengambil daftar kecamatan di Aceh Selatan (ID = 1103):
+Contoh untuk mengambil daftar kecamatan di Garut Kota (ID = 3205):
 
 ```
-GET https://emsifa.github.io/api-wilayah-indonesia/api/districts/1103.json
+GET https://bagussona.github.io/api-wilayah-indonesia/api/districts/3205.json
 ```
 
 Contoh Response:
@@ -103,14 +74,14 @@ Contoh Response:
 ```
 [
   {
-    "id": "1103010",
-    "regency_id": "1103",
-    "name": "TRUMON"
+    "id": "3205190",
+    "regency_id": "3205",
+    "name": "GARUT KOTA"
   },
   {
-    "id": "1103011",
-    "regency_id": "1103",
-    "name": "TRUMON TIMUR"
+    "id": "3205200",
+    "regency_id": "3205",
+    "name": "KARANGPAWITAN"
   },
   ...
 ]
@@ -119,13 +90,13 @@ Contoh Response:
 #### 4. Mengambil Daftar Kelurahan pada Kecamatan Tertentu
 
 ```
-GET https://emsifa.github.io/api-wilayah-indonesia/api/villages/{districtId}.json
+GET https://bagussona.github.io/api-wilayah-indonesia/api/villages/{districtId}.json
 ```
 
-Contoh untuk mengambil daftar kelurahan di Trumon (ID = 1103010):
+Contoh untuk mengambil daftar kelurahan di Garut Kota (ID = 3205190):
 
 ```
-GET https://emsifa.github.io/api-wilayah-indonesia/api/villages/1103010.json
+GET https://bagussona.github.io/api-wilayah-indonesia/api/villages/3205190.json
 ```
 
 Contoh Response:
@@ -133,14 +104,14 @@ Contoh Response:
 ```
 [
   {
-    "id": "1103010001",
-    "district_id": "1103010",
-    "name": "KUTA PADANG"
+    "id": "3205190004",
+    "district_id": "3205190",
+    "name": "KOTAWETAN"
   },
   {
-    "id": "1103010002",
-    "district_id": "1103010",
-    "name": "RAKET"
+    "id": "3205190005",
+    "district_id": "3205190",
+    "name": "KOTAKULON"
   },
   ...
 ]
@@ -149,94 +120,92 @@ Contoh Response:
 #### 5. Mengambil Data Provinsi berdasarkan ID Provinsi
 
 ```
-GET https://emsifa.github.io/api-wilayah-indonesia/api/province/{provinceId}.json
+GET https://bagussona.github.io/api-wilayah-indonesia/api/province/{provinceId}.json
 ```
 
-Contoh untuk mengambil data provinsi Aceh (ID = 11):
+Contoh untuk mengambil data provinsi Jawa Barat (ID = 32):
 
 ```
-GET https://emsifa.github.io/api-wilayah-indonesia/api/province/11.json
+GET https://bagussona.github.io/api-wilayah-indonesia/api/province/32.json
 ```
 
 Contoh Response:
 
 ```
 {
-  "id": "11",
-  "name": "ACEH"
+  "id": "32",
+  "name": "JAWA BARAT"
 }
 ```
 
 #### 6. Mengambil Data Kab/Kota berdasarkan ID Kab/Kota
 
 ```
-GET https://emsifa.github.io/api-wilayah-indonesia/api/regency/{regencyId}.json
+GET https://bagussona.github.io/api-wilayah-indonesia/api/regency/{regencyId}.json
 ```
 
-Contoh untuk mengambil data kabupaten Aceh Selatan (ID = 1103):
+Contoh untuk mengambil data kabupaten Garut (ID = 3205):
 
 ```
-GET https://emsifa.github.io/api-wilayah-indonesia/api/regency/1103.json
+GET https://bagussona.github.io/api-wilayah-indonesia/api/regency/3205.json
 ```
 
 Contoh Response:
 
 ```
 {
-  "id": "1103",
-  "province_id": "11",
-  "name": "KABUPATEN ACEH SELATAN"
+  "id": "3205",
+  "province_id": "32",
+  "name": "KABUPATEN GARUT"
 }
 ```
 
 #### 7. Mengambil Data Kecamatan berdasarkan ID Kecamatan
 
 ```
-GET https://emsifa.github.io/api-wilayah-indonesia/api/district/{districtId}.json
+GET https://bagussona.github.io/api-wilayah-indonesia/api/district/{districtId}.json
 ```
 
-Contoh untuk mengambil data kecamatan Trumon Timur (ID = 1103011):
+Contoh untuk mengambil data kecamatan Garut Kota (ID = 3205190):
 
 ```
-GET https://emsifa.github.io/api-wilayah-indonesia/api/district/1103011.json
+GET https://bagussona.github.io/api-wilayah-indonesia/api/district/3205190.json
 ```
 
 Contoh Response:
 
 ```
 {
-  "id": "1103011",
-  "regency_id": "1103",
-  "name": "TRUMON TIMUR"
+  "id": "3205190",
+  "regency_id": "3205",
+  "name": "GARUT KOTA"
 }
 ```
 
 #### 8. Mengambil Data Kelurahan berdasarkan ID Kelurahan
 
 ```
-GET https://emsifa.github.io/api-wilayah-indonesia/api/village/{villageId}.json
+GET https://bagussona.github.io/api-wilayah-indonesia/api/village/{villageId}.json
 ```
 
-Contoh untuk mengambil data kelurahan Jambo Dalem (ID = 1103011010):
+Contoh untuk mengambil data kelurahan Kota Kulon (ID = 3205190005):
 
 ```
-GET https://emsifa.github.io/api-wilayah-indonesia/api/village/1103011010.json
+GET https://bagussona.github.io/api-wilayah-indonesia/api/village/3205190005.json
 ```
 
 Contoh Response:
 
 ```
 {
-  "id": "1103011010",
-  "district_id": "1103011",
-  "name": "JAMBO DALEM"
+  "id": "3205190005",
+  "district_id": "3205190",
+  "name": "KOTAKULON"
 }
 ```
 
 ## LIMITASI
 
 Karena API ini dihosting di Github Page, Github Page sendiri memberikan batasan bandwith 100GB/bulan. Rata-rata endpoint disini memiliki ukuran 1KB/endpoint, jadi kurang lebih request yang dapat digunakan adalah 100.000.000 request per bulan, atau sekitar 3.000.000 request/hari.
-
-Karena limitasi ini, disarankan untuk hosting API ini di github kamu sendiri.
 
 Untuk lebih detail tentang limitasi Github Page, bisa dilihat [disini](https://help.github.com/en/articles/about-github-pages#usage-limits).
